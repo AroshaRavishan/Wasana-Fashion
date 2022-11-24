@@ -1040,6 +1040,52 @@ body {
 .btn1:hover {
   background: #130f40;
 }
+@media (max-width: 1280px) {
+  .text {
+    font-size: 1rem;
+  }
+
+.contact {
+  padding: 9rem 0 6rem 0;
+}
+
+.contact-form {
+  padding-left: 1rem;
+}
+
+.contact-info {
+  padding-right: 1rem;
+}
+
+.contact-box {
+  padding: 3.6rem 3rem;
+}
+
+.information-wrap {
+  margin-top: 1.2rem;
+}
+
+.contact-icon {
+  min-width: 50px;
+  height: 50px;
+  font-size: 1rem;
+  margin-right: 0.8rem;
+}
+
+.contact-icon i {
+  line-height: 50px;
+}
+
+.info-text {
+  font-size: 1.05rem;
+}
+
+.contact-input {
+  font-size: 0.9rem;
+  padding: 0.9rem 1.6rem;
+  margin: 0.4rem 0;
+}
+}
 
 /* End Contact */
 
