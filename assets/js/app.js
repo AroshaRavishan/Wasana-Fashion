@@ -1,31 +1,39 @@
-$('document').ready(function(){
-	$('input[type="text"], input[type="email"], textarea').focus(function(){
-		var background = $(this).attr('id');
-		$('#' + background + '-form').addClass('formgroup-active');
-		$('#' + background + '-form').removeClass('formgroup-error');
-	});
-	$('input[type="text"], input[type="email"], textarea').blur(function(){
-		var background = $(this).attr('id');
-		$('#' + background + '-form').removeClass('formgroup-active');
-	});
+    // check for saved 'darkMode' in localStorage
+    let darkMode = localStorage.getItem('darkMode'); 
 
-function errorfield(field){
-	$(field).addClass('formgroup-error');
-	console.log(field);	
-}
-
-$("#waterform").submit(function() {
-	var stopsubmit = false;
-
-if($('#name').val() == "") {
-	errorfield('#name-form');
-	stopsubmit=true;
-}
-if($('#email').val() == "") {
-	errorfield('#email-form');
-	stopsubmit=true;
-}
-  if(stopsubmit) return false;
-});
-		
-});
+    const darkModeToggle = document.querySelector('#dark-mode-toggle');
+    
+    const enableDarkMode = () => {
+      // 1. Add the class to the body
+      document.body.classList.add('darkmode');
+      // 2. Update darkMode in localStorage
+      localStorage.setItem('darkMode', 'enabled');
+    }
+    
+    const disableDarkMode = () => {
+      // 1. Remove the class from the body
+      document.body.classList.remove('darkmode');
+      // 2. Update darkMode in localStorage 
+      localStorage.setItem('darkMode', null);
+    }
+     
+    // If the user already visited and enabled darkMode
+    // start things off with it on
+    if (darkMode === 'enabled') {
+      enableDarkMode();
+    }
+    
+    // When someone clicks the button
+    darkModeToggle.addEventListener('click', () => {
+    
+      // get their darkMode setting
+      darkMode = localStorage.getItem('darkMode'); 
+      
+      // if it not current enabled, enable it
+      if (darkMode !== 'enabled') {
+        enableDarkMode();
+      // if it has been enabled, turn it off  
+      } else {  
+        disableDarkMode(); 
+      }
+    });
