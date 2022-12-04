@@ -1586,8 +1586,8 @@ body {
   --hover-color: #e7e7e8;
 }
 .darkmode {
-  --canvas-color: #3f3f3f;
-  --hover-color: #888888;
+  --canvas-color: #252525;
+  --hover-color: #3a3a3a;
 }
 body {
   background-color: var(--canvas-color);
